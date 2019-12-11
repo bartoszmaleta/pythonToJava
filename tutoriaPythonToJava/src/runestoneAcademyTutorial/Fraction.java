@@ -1,9 +1,25 @@
 package runestoneAcademyTutorial;
 
-public class Fraction {
+public class Fraction extends Number implements Comparable<Fraction> {
 
     private Integer numerator;
     private Integer denominator;
+
+    public double doubleValue() {
+        return numerator.doubleValue() / denominator.doubleValue();
+    }
+
+    public float floatValue() {
+        return numerator.floatValue() / denominator.floatValue();
+    }
+
+    public int intValue() {
+        return numerator.intValue() / denominator.intValue();
+    }
+
+    public long longValue() {
+        return numerator.longValue() / denominator.longValue();
+    }
 
     public Integer getNumerator() {
         return numerator;
@@ -53,6 +69,29 @@ public class Fraction {
         }
         return n;
     }
+
+    public String toString() {
+        return numerator.toString() + "/" + denominator.toString();
+    }
+
+    public boolean equals(Fraction other) {
+        Integer num1 = this.numerator * other.getDenominator();
+        Integer num2 = this.denominator * other.getNumerator();
+
+        if (num1 == num2)
+            return true;
+        else
+            return false;
+    }
+
+    public int compareTo(Fraction other) {
+        Integer num1 = this.numerator * other.getDenominator();
+        Integer num2 = this.denominator * other.getNumerator();
+        return num1 - num2;
+    }
+
+
+
     public static void main(String[] args) {
         // Fraction adding program
         Fraction f1 = new Fraction(1, 2);
