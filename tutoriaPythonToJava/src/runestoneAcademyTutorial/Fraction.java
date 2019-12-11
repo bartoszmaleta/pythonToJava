@@ -1,4 +1,7 @@
 package runestoneAcademyTutorial;
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class Fraction extends Number implements Comparable<Fraction> {
 
@@ -96,11 +99,28 @@ public class Fraction extends Number implements Comparable<Fraction> {
         // Fraction adding program
         Fraction f1 = new Fraction(1, 2);
         Fraction f2 = new Fraction(2, 3);
+        Fraction f3 = new Fraction(1,4);
 
         System.out.println(f1);
         System.out.println(f1.add(1));
         System.out.println(f1);
 
+        System.out.println();
+        System.out.println(f1.intValue());
+        System.out.println(f1.doubleValue());
+
+        System.out.println();
+
+        ArrayList<Fraction> myFracs = new ArrayList<Fraction>();
+        myFracs.add(f1);
+        myFracs.add(f2);
+        myFracs.add(f3);
+
+        Collections.sort(myFracs);
+
+        for (Fraction f : myFracs) {
+            System.out.println(f);
+        }
     }
 
 }
